@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Орфоэпический тренажёр ЕГЭ</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="panel stats-panel">
+      <div class="brand">
+        <div class="brand-mark">´</div>
+        <div>
+          <h1>Орфоэпия ЕГЭ</h1>
+          <p>тренажёр ударений</p>
+        </div>
+      </div>
+
+      <div class="progress-box">
+        <div class="progress-top">
+          <span>Прогресс сессии</span>
+          <b id="sessionPercent">0%</b>
+        </div>
+        <div class="progress-line">
+          <div id="sessionBar"></div>
+        </div>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <span>дано ответов</span>
+          <b id="answeredCount">0</b>
+        </div>
+        <div class="stat-card">
+          <span>точность</span>
+          <b id="accuracyCount">0%</b>
+        </div>
+        <div class="stat-card">
+          <span>освоено</span>
+          <b id="masteredCount">0</b>
+        </div>
+        <div class="stat-card">
+          <span>ошибок</span>
+          <b id="mistakeCount">0</b>
+        </div>
+      </div>
+
+      <div class="mode-box">
+        <p class="label">режим</p>
+        <div class="mode-buttons">
+          <button class="small-button active" id="allModeButton" type="button">все слова</button>
+          <button class="small-button" id="mistakesModeButton" type="button">ошибки</button>
+        </div>
+      </div>
+
+      <div class="filter-box">
+        <label for="categorySelect">часть речи</label>
+        <select id="categorySelect"></select>
+      </div>
+
+      <div class="actions">
+        <button id="newSessionButton" type="button">новая сессия</button>
+        <button id="resetProgressButton" class="ghost" type="button">сбросить прогресс</button>
+      </div>
+    </aside>
+
+    <main class="trainer-card">
+      <div class="task-head">
+        <div>
+          <p class="eyebrow" id="categoryLabel">слово</p>
+          <h2>Нажми на гласную, на которую падает ударение</h2>
+        </div>
+        <div class="counter" id="queueCounter">0 / 0</div>
+      </div>
+
+      <div class="word-zone">
+        <div id="wordLetters" class="word-letters" aria-live="polite"></div>
+      </div>
+
+
+      <div class="task-actions">
+        <button id="nextButton" type="button" disabled>далее</button>
+        <button id="skipButton" class="ghost" type="button">пропустить</button>
+      </div>
+    </main>
+
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
